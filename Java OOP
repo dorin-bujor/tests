@@ -1,0 +1,139 @@
+Part 1: Abstract Class and Interface Design
+
+Question 1: Define an abstract class ArtPiece.
+
+Represent a general piece of art and include:
+
+Attributes:
+
+title (String)
+
+artistName (String)
+
+description (String)
+
+Methods:
+
+An abstract method displayDetails() that shows the specific details of the artwork.
+
+A method formatDescription(String description) to:
+
+Trim unnecessary spaces.
+
+Capitalize the first letter of every sentence.
+
+Replace any occurrence of "painting" with "masterpiece".
+
+Question 2: Define an interface Critiqueable.
+
+Include:
+
+A method addCritique(String critique) to add critiques for an art piece.
+
+A method getCritiqueSummary() to display all critiques for the art piece.
+
+Error handling:
+
+If a critique is empty, throw an exception with the message: "Critique cannot be empty."
+
+If a critique exceeds 200 characters, truncate it and display the warning: "Critique truncated to 200 characters."
+
+Question 3: Create a concrete class Painting that extends ArtPiece and implements Critiqueable.
+
+Add attributes specific to paintings, such as medium (e.g., oil, watercolor).
+
+Implement the displayDetails() method to include painting-specific details.
+
+Implement the methods from the Critiqueable interface.
+
+Question 4: Create another concrete class Sculpture that extends ArtPiece and implements Critiqueable.
+
+Add attributes specific to sculptures, such as material (e.g., marble, bronze).
+
+Implement the displayDetails() method to include sculpture-specific details.
+
+Implement the methods from the Critiqueable interface.
+
+Part 2: Class Relationships and Inheritance
+
+Question 5: Define a class Artist.
+
+Represent an artist and include:
+
+Attributes:
+
+name (String)
+
+bio (String)
+
+A collection of ArtPiece objects (their works).
+
+Methods:
+
+addArtPiece(ArtPiece artPiece) to add an artwork to the artist's collection.
+
+getPortfolio() to display the artist’s bio and their artworks.
+
+Question 6: Create a class Exhibition to manage multiple art pieces.
+
+Represent an art exhibition and include:
+
+Attributes:
+
+A collection of ArtPiece objects.
+
+Methods:
+
+addToExhibition(ArtPiece artPiece) to add an artwork to the exhibition.
+
+displayExhibitionDetails() to list all artworks in the exhibition, along with their critiques.
+
+Part 3: Additional Features
+
+Question 7: Add sorting functionality for artworks.
+
+Write a method sortArtPiecesByTitle() in the Exhibition class to sort all artworks alphabetically by their title.
+
+Question 8: Implement a search feature.
+
+Add a method searchArtPiece(String keyword) in the Exhibition class to find all artworks where the title or description contains the keyword (case-insensitive).
+
+Question 9: Implement meaningful string manipulation in Exhibition.
+
+Add a method cleanTitles() to:
+
+Convert all titles to lowercase.
+
+Replace any special characters in titles with spaces.
+
+Capitalize the first letter of each word in the title.
+
+Question 10: Add error handling for invalid artwork additions.
+
+Ensure that an ArtPiece cannot be added to an artist or exhibition if:
+
+Its title is empty. Throw an exception: "Title cannot be empty."
+
+The artist’s name is missing. Throw an exception: "Artist name cannot be empty."
+
+Part 4: Final Application
+
+Question 11: Build the full application.
+
+Create a main() method to demonstrate the functionality of your classes:
+
+Create multiple Artist objects, each with a portfolio of Painting and Sculpture objects.
+
+Add these artworks to an Exhibition.
+
+Add and retrieve critiques for several artworks.
+
+Format descriptions using the formatDescription() method.
+
+Sort and display all artworks in the exhibition.
+
+Search for artworks based on keywords in their title or description.
+
+Use cleanTitles() to standardize artwork titles.
+
+Display the details of the exhibition, including all artworks, their critiques, and the artists who created them.
